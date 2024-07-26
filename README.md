@@ -6,7 +6,8 @@ Simulation is here: https://github.com/barakbarlevi/CADAC
 should work
 
 
-Primary_Controller.kml needs to be dragged into Google Earth.
+
+For this project, Primary_Controller.kml needs to be dragged into Google Earth.
 
 
 Demo.png shows overlapping trajectories hapenning.
