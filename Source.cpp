@@ -312,7 +312,9 @@ int main(int argc, char *argv[])
                     T2.join();
                     T3.join();
                     */
+                    
 
+                    /*
                     std::thread t1 = predictionSupplierCADAC->threadupdateBITA_ParamsInSupplierInput(SensorTrajectoryCADAC.getBITA_Params());
                     std::thread t2 = predictionSupplierCADAC->threadRunSupplierOnce();
                     predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
@@ -320,7 +322,22 @@ int main(int argc, char *argv[])
                     t1.join();
                     t2.join();
                     t3.join();
-                        
+                    */  
+                   
+                    /* Not threaded*/
+                   int first, second, third;
+
+                    first = predictionSupplierCADAC->updateBITA_ParamsInSupplierInput(SensorTrajectoryCADAC.getBITA_Params()); // XXXX names XXXX POSIX xxxx mention: way of updating bita params in input files may vary.
+                    first ++;
+                                                                                                                  // XXXX name XXXX POSIX                
+                    second = predictionSupplierCADAC->runSupplierOnce(); // XXXX POSIX XXXX names xxxx no matter what, this will have to include process sych. cuz on the one hand displaying radar data and on the other hand running simulation and plotting it. i think it's a good first step to let it run on a seperate thread. xxxx mention: way of running once may vary.
+                    second = first + 1;
+
+                    predictionSupplierCADAC->trajectoryCADAC = std::make_shared<PredSuppTrajectoryCADAC>(currentCollectorLoadPaths.at(i), currentCollector->collectorKML_);
+                    
+                    third = second;
+                    third = predictionSupplierCADAC->trajectoryCADAC->readInput(false);
+                    third = second + 1;   
 
 
                     suppliersCollectorsVector.at(suppliersCollectorsVectorIndex)->suppliersVector.push_back(predictionSupplierCADAC->trajectoryCADAC); // XXXX

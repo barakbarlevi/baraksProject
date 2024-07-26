@@ -12,8 +12,8 @@ Trajectory::Trajectory(std::string loadPath, std::string kmlPath) {
     //this->currentRowIndex = FirstLineOfNumericData;   // xxxx delete if not used
 }
 
-//int Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES in all declaration and uses are the same. not like in cobra where there someIndex and SomeIdx for example.
-void Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES in all declaration and uses are the same. not like in cobra where there someIndex and SomeIdx for example.
+int Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES in all declaration and uses are the same. not like in cobra where there someIndex and SomeIdx for example.
+//void Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES in all declaration and uses are the same. not like in cobra where there someIndex and SomeIdx for example.
     
     
     if(!isDetection) {
@@ -23,7 +23,7 @@ void Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES 
             //gSyncOutputReading_cv.wait(ul, [](){ return gSyncOutputReading_ready; });
 
             // obj.waitForCompletionOfT2();
-            waitForCompletionOfT2();
+            //waitForCompletionOfT2();
             //std::unique_lock<std::mutex> ul(mux);             
             //cv.wait(ul, [&]() {return !completed[0]; });
 
@@ -43,7 +43,7 @@ void Trajectory::readInput(bool isDetection) { //  XXXX MAKE SURE ALL VAR NAMES 
 
 
             // obj.signalCompletionOfT3();
-            signalCompletionOfT3();
+            //signalCompletionOfT3();
             //std::lock_guard<std::mutex> ul(mux);
             //completed[0] = false;
             //completed[1] = false;

@@ -60,8 +60,8 @@ class Trajectory {
     Trajectory(std::string loadPath, std::string kmlPath);  // XXXX ADD CONSTS? WHEN TO ADD CONSTS? WRITE IN COMMENT TO CLARFIYIF NEEDED
     ~Trajectory() = default;    // XXXX COMPLETE IF THERE's memory allocation needed to be deleted. WHAT'S THE MEANING OF default? stackoverflow. write explicitly in a comment
 
-    virtual void readInput(bool isDetection);  // XXXX Addressing it here as simply reading a file that's ready already. It would change in case of a sensor sending data in real time XXXX ENGLISH    XXXX IMPOrtant: why is this method virtual? can the virtual word be deleted and it'll work fine? if not, what's the explanation?
-    //virtual int readInput(bool isDetection);  // XXXX Addressing it here as simply reading a file that's ready already. It would change in case of a sensor sending data in real time XXXX ENGLISH    XXXX IMPOrtant: why is this method virtual? can the virtual word be deleted and it'll work fine? if not, what's the explanation?
+    //virtual void readInput(bool isDetection);  // XXXX Addressing it here as simply reading a file that's ready already. It would change in case of a sensor sending data in real time XXXX ENGLISH    XXXX IMPOrtant: why is this method virtual? can the virtual word be deleted and it'll work fine? if not, what's the explanation?
+    virtual int readInput(bool isDetection);  // XXXX Addressing it here as simply reading a file that's ready already. It would change in case of a sensor sending data in real time XXXX ENGLISH    XXXX IMPOrtant: why is this method virtual? can the virtual word be deleted and it'll work fine? if not, what's the explanation?
 
     // XXXX CHANGE TO POSIX. MENTION IN COMMENT IT CAN ALSO BE done like this, and give reference to the stackoverflow thread giving this writing method. explain a bit on the lambda and the  capture.
     std::thread threadReadInput(bool isDetection) {

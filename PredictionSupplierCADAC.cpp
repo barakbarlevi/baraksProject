@@ -113,12 +113,14 @@ int PredictionSupplierCADAC::prepareInputFiles() {
 // xxxx yes they matter. i saw it on gnuplot.
 // xxxx xcg_0 and x_cg1 don't matter. saw it on gnuplot. moment = -0.2 must havr override them.
 // xxxx not a kml
-void PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params) // XXXX so _bita_params or bita_params? and ofcourse change tbm and all
+
+//void PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params) // XXXX so _bita_params or bita_params? and ofcourse change tbm and all
+int PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_params) // XXXX so _bita_params or bita_params? and ofcourse change tbm and all
 {
     //this->trajectoryCADAC->synchObj.waitForCompletionOfT3();
     
     //obj.waitForCompletionOfT3();
-    waitForCompletionOfT3();
+    //waitForCompletionOfT3();
     //std::unique_lock<std::mutex> ul(mux);         
     //cv.wait(ul, [&]() {return !completed[1]; }); 
 
@@ -211,7 +213,7 @@ void PredictionSupplierCADAC::updateBITA_ParamsInSupplierInput(BITA_params BITA_
     std::cout << "Wrote to input file: lonx = " + BITA_params.lon + ", latx = " + BITA_params.lat + ", alt = " + BITA_params.height + ", dvbe = " + BITA_params.vbal + ", thtbdx = " + BITA_params.gamalbal + ", psibdx = " + BITA_params.azimlbal + ", Aerodeck = " + aeroDeck + ", vmass0 = " + momentaryMass << std::endl;
     
     //obj.signalCompletionOfT1();
-    signalCompletionOfT1();
+    //signalCompletionOfT1();
     //std::lock_guard<std::mutex> ul(mux);
     //completed[0] = true;
     //cv.notify_all();
@@ -311,15 +313,15 @@ int PredictionSupplierCADAC::runSupplierOnce()
 }
 */
 
-//int PredictionSupplierCADAC::runSupplierOnce()
-void PredictionSupplierCADAC::runSupplierOnce()
+int PredictionSupplierCADAC::runSupplierOnce()
+//void PredictionSupplierCADAC::runSupplierOnce()
 { 
     //while(!readOnce) {
         //std::unique_lock<std::mutex> ul(gSyncOutputReading_mutex);   // xxxx 
         
 
         // obj.waitForCompletionOfT1();
-        waitForCompletionOfT1();
+        //waitForCompletionOfT1();
         //std::unique_lock<std::mutex> ul(mux);             
         //cv.wait(ul, [&]() {return !completed[2]; }); 
 
@@ -328,7 +330,7 @@ void PredictionSupplierCADAC::runSupplierOnce()
         std::system(COMMAND.c_str());
 
         // obj.signalCompletionOfT2();
-        signalCompletionOfT2();
+        //signalCompletionOfT2();
         //std::lock_guard<std::mutex> ul(mux);
         //completed[0] = false;
         //completed[1] = true;

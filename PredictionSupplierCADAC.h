@@ -67,7 +67,8 @@ class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES
 
     //void setTBM(std::string primaryInputFile) { this->primaryInputFile = primaryInputFile;} // XXXX CHANGE "TBM" TO SOMETHING ELSE. THORUGHT ALL CTRL+F TBM.
 
-    virtual void updateBITA_ParamsInSupplierInput(BITA_params BITA_params);    // XXXX make sure that this is the right way of declaration. in base class virtual ... = 0 , in inhertied class this and that .... until implementation.
+    //virtual void updateBITA_ParamsInSupplierInput(BITA_params BITA_params);    // XXXX make sure that this is the right way of declaration. in base class virtual ... = 0 , in inhertied class this and that .... until implementation.
+    virtual int updateBITA_ParamsInSupplierInput(BITA_params BITA_params);    // XXXX make sure that this is the right way of declaration. in base class virtual ... = 0 , in inhertied class this and that .... until implementation.
 
     // XXXX CHANGE PLACE IN DECLARATIONS (ARRANGE ALL), _ CONVENTION, TBM, MOVE TO POSIX... BUT COMMENT OUT THIS WRITING STYLE.
     std::thread threadupdateBITA_ParamsInSupplierInput(BITA_params _BITA_params) {
@@ -84,8 +85,8 @@ class PredictionSupplierCADAC : public PredictionSupplier {   // XXXX THIS MAKES
         return std::thread([=] {prepareInputFiles();});
     }
 
-    virtual void runSupplierOnce();
-    //virtual int runSupplierOnce();
+    //virtual void runSupplierOnce();
+    virtual int runSupplierOnce();
 
     
     std::thread threadRunSupplierOnce() {

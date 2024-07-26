@@ -12,10 +12,12 @@ class PredictionSupplier {
     PredictionSupplier(std::string path_to_exe, std::string priamryInputFile);    // XXXX names xxxx dt, dt_plot don't add anything right now.. erase..
 
     virtual int prepareInputFiles() = 0;    // XXXX name?
+    
     //virtual void runSupplierOnce() = 0;  // XXXX name?
-    virtual void runSupplierOnce() = 0;  // XXXX name?
-    virtual void updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;    // XXXX
-    //virtual int updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;    // XXXX
+    virtual int runSupplierOnce() = 0;  // XXXX name?
+    
+    //virtual void updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;    // XXXX
+    virtual int updateBITA_ParamsInSupplierInput(BITA_params BITA_params) = 0;    // XXXX
 
     protected:
     std::string primaryInputFile;   // XXXX OFC NOT TBM, CHANGE
