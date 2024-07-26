@@ -1,0 +1,3 @@
+#include "PredictionSupplierTrajectory.h"
+
+PredictionSupplierTrajectory::PredictionSupplierTrajectory(std::string loadPath, std::string kmlPath) : Trajectory(loadPath, kmlPath) {}; // XXXX names...
