@@ -1,4 +1,4 @@
-using an open source simulation called CADAC to produce ballistic trajectories. Wrote own code to run them in real time and plot on Google Earth.
+using an open source simulation called CADAC to produce ballistic trajectories. Wrote own code to run them live and plot on Google Earth.
 
 Simulation is here: https://github.com/barakbarlevi/CADAC
 ./SIX_DOF inputOriginal.asc 
